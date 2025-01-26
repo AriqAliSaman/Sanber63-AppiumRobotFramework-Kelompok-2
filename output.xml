@@ -1,19 +1,441 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2 (Python 3.11.8 on win32)" generated="2025-01-26T08:19:48.827453" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2 (Python 3.11.8 on win32)" generated="2025-01-26T08:35:00.491287" rpa="false" schemaversion="5">
 <suite id="s1" name="bookSuite" source="C:\Users\didah\OneDrive\Dokumen\Ali\Belajar Appium\sanbercode-52-mobile\suites\bookSuite.robot">
 <test id="s1-t1" name="User navigate to book page" line="16">
-<status status="FAIL" start="2025-01-26T08:19:48.996244" elapsed="0.000000">Test cannot be empty.</status>
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Flight Application" owner="base">
+<kw name="Open Application" owner="AppiumLibrary">
+<arg>remote_url=${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>platformVersion=${PLATFORM_VERSION}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://appium.io/docs/en/2.1/cli/args/
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |
+| strict_ssl          | No     | allows you to send commands to an invalid certificate host like a self-signed one. |</doc>
+<status status="PASS" start="2025-01-26T08:35:01.015646" elapsed="20.783664"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:01.014531" elapsed="20.784779"/>
+</kw>
+<kw name="AND Login With Valid Credentials" owner="loginPage">
+<kw name="Verify Home Page Appears" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:23.783952" level="INFO">xpath criteria: //android.widget.ImageView[@resource-id="com.example.myapplication:id/imageView4"]</msg>
+<arg>${logo_homePage}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:21.802997" elapsed="1.980955"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:21.801938" elapsed="1.983030"/>
+</kw>
+<kw name="Click Sign In Button On Home Page" owner="homePage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:23.910305" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/login"]</msg>
+<arg>${signIn_button_homePage}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:23.785994" elapsed="0.125311"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:23.917672" level="INFO">Clicking element '//android.widget.Button[@resource-id="com.example.myapplication:id/login"]'.</msg>
+<msg time="2025-01-26T08:35:24.132634" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/login"]</msg>
+<arg>${signIn_button_homePage}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:23.911305" elapsed="0.221329"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:23.784968" elapsed="0.347666"/>
+</kw>
+<kw name="Verify Login Appears" owner="loginPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:25.455898" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.example.myapplication:id/username"]
+xpath criteria: //android.widget.EditText[@resource-id="com.example.myapplication:id/username"]</msg>
+<arg>${email_input_loginPage}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:24.133643" elapsed="1.322255"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:26.523738" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.example.myapplication:id/password"]</msg>
+<arg>${password_input_loginPage}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:25.455898" elapsed="1.067840"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:26.669905" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/signIn"]</msg>
+<arg>${signIn_button_loginPage}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:26.523738" elapsed="0.146167"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:24.133643" elapsed="2.536262"/>
+</kw>
+<kw name="Input User Email On Login Page" owner="loginPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:26.679078" level="INFO">Typing text 'support@ngendigital.com' into text field '//android.widget.EditText[@resource-id="com.example.myapplication:id/username"]'</msg>
+<msg time="2025-01-26T08:35:26.854512" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.example.myapplication:id/username"]</msg>
+<arg>${email_input_loginPage}</arg>
+<arg>${email}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:26.671425" elapsed="0.184132"/>
+</kw>
+<arg>${email}</arg>
+<status status="PASS" start="2025-01-26T08:35:26.669905" elapsed="0.185652"/>
+</kw>
+<kw name="Input User Password On Login Page" owner="loginPage">
+<kw name="Input Text" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:26.862325" level="INFO">Typing text 'abc123' into text field '//android.widget.EditText[@resource-id="com.example.myapplication:id/password"]'</msg>
+<msg time="2025-01-26T08:35:27.499586" level="INFO">xpath criteria: //android.widget.EditText[@resource-id="com.example.myapplication:id/password"]</msg>
+<arg>${password_input_loginPage}</arg>
+<arg>${password}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:26.856790" elapsed="0.642796"/>
+</kw>
+<arg>${password}</arg>
+<status status="PASS" start="2025-01-26T08:35:26.855557" elapsed="0.645538"/>
+</kw>
+<kw name="Click Sign In Button On Login Page" owner="loginPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:27.508396" level="INFO">Clicking element '//android.widget.Button[@resource-id="com.example.myapplication:id/signIn"]'.</msg>
+<msg time="2025-01-26T08:35:28.177255" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/signIn"]</msg>
+<arg>${signIn_button_loginPage}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:27.502393" elapsed="0.674862"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:27.502393" elapsed="0.674862"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:21.799310" elapsed="6.378943"/>
+</kw>
+<kw name="AND Navigate To Book Page" owner="bookPage">
+<kw name="Click Book Button On Home Page" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:29.851744" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/book"]
+xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/book"]</msg>
+<arg>${bookPage_button}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:28.179525" elapsed="1.672219"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:29.858790" level="INFO">Clicking element '//android.widget.Button[@resource-id="com.example.myapplication:id/book"]'.</msg>
+<msg time="2025-01-26T08:35:30.061643" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/book"]</msg>
+<arg>${bookPage_button}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:29.851744" elapsed="0.209899"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:28.179525" elapsed="1.882118"/>
+</kw>
+<kw name="Click From City Dropdown" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:32.302127" level="INFO">xpath criteria: //android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerFrom"]
+xpath criteria: //android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerFrom"]</msg>
+<arg>${fromCity_dropdown}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:30.063842" elapsed="2.239725"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:32.314361" level="INFO">Clicking element '//android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerFrom"]'.</msg>
+<msg time="2025-01-26T08:35:32.505295" level="INFO">xpath criteria: //android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerFrom"]</msg>
+<arg>${fromCity_dropdown}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:32.303567" elapsed="0.201728"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:30.062844" elapsed="2.442451"/>
+</kw>
+<kw name="Choose From City Option" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:33.485983" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="android:id/text1" and @text="Toronto"]</msg>
+<arg>${toronto_option}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:32.506295" elapsed="0.981199"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:33.497151" level="INFO">Clicking element '//android.widget.TextView[@resource-id="android:id/text1" and @text="Toronto"]'.</msg>
+<msg time="2025-01-26T08:35:34.376119" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="android:id/text1" and @text="Toronto"]</msg>
+<arg>${toronto_option}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:33.487494" elapsed="0.888625"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:32.505295" elapsed="1.872282"/>
+</kw>
+<kw name="Click To City Dropdown" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:34.652104" level="INFO">xpath criteria: //android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerTo"]</msg>
+<arg>${toCity_dropdown}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:34.378700" elapsed="0.273404"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:34.658063" level="INFO">Clicking element '//android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerTo"]'.</msg>
+<msg time="2025-01-26T08:35:35.781842" level="INFO">xpath criteria: //android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerTo"]</msg>
+<arg>${toCity_dropdown}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:34.652104" elapsed="1.129738"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:34.377577" elapsed="1.404265"/>
+</kw>
+<kw name="Choose To City Option" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:35.969314" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="android:id/text1" and @text="Ottawa"]</msg>
+<arg>${ottawa_option}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:35.782848" elapsed="0.187982"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:35.976671" level="INFO">Clicking element '//android.widget.TextView[@resource-id="android:id/text1" and @text="Ottawa"]'.</msg>
+<msg time="2025-01-26T08:35:36.877413" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="android:id/text1" and @text="Ottawa"]</msg>
+<arg>${ottawa_option}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:35.970830" elapsed="0.906583"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:35.782848" elapsed="1.094565"/>
+</kw>
+<kw name="Click Class Dropdown" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:37.135366" level="INFO">xpath criteria: //android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerClass"]</msg>
+<arg>${class_dropdown}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:36.879582" elapsed="0.255784"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:37.144339" level="INFO">Clicking element '//android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerClass"]'.</msg>
+<msg time="2025-01-26T08:35:37.404070" level="INFO">xpath criteria: //android.widget.Spinner[@resource-id="com.example.myapplication:id/spinnerClass"]</msg>
+<arg>${class_dropdown}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:37.135366" elapsed="0.268704"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:36.878544" elapsed="0.525526"/>
+</kw>
+<kw name="Choose Class Option" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:38.325542" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="android:id/text1" and @text="Business"]</msg>
+<arg>${business_option}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:37.405088" elapsed="0.920454"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:38.334668" level="INFO">Clicking element '//android.widget.TextView[@resource-id="android:id/text1" and @text="Business"]'.</msg>
+<msg time="2025-01-26T08:35:39.198760" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="android:id/text1" and @text="Business"]</msg>
+<arg>${business_option}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:38.326543" elapsed="0.872217"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:37.404070" elapsed="1.794690"/>
+</kw>
+<kw name="Click Start Date Input" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:39.329094" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.example.myapplication:id/textStartDate"]</msg>
+<arg>${startDate_input}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:39.200124" elapsed="0.130433"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:39.336104" level="INFO">Clicking element '//android.widget.TextView[@resource-id="com.example.myapplication:id/textStartDate"]'.</msg>
+<msg time="2025-01-26T08:35:39.489384" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.example.myapplication:id/textStartDate"]</msg>
+<arg>${startDate_input}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:39.330557" elapsed="0.158827"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:39.200124" elapsed="0.289260"/>
+</kw>
+<kw name="Choose Start Date" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:41.131528" level="INFO">xpath criteria: //android.view.View[@content-desc="02 August 2019"]
+xpath criteria: //android.view.View[@content-desc="02 August 2019"]</msg>
+<arg>${start_date}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:39.489384" elapsed="1.642144"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:41.140831" level="INFO">Clicking element '//android.view.View[@content-desc="02 August 2019"]'.</msg>
+<msg time="2025-01-26T08:35:42.137180" level="INFO">xpath criteria: //android.view.View[@content-desc="02 August 2019"]</msg>
+<arg>${start_date}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:41.132534" elapsed="1.004646"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:39.489384" elapsed="2.647796"/>
+</kw>
+<kw name="Click Accept Start Date" owner="bookPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:42.148728" level="INFO">Clicking element '//android.widget.Button[@resource-id="android:id/button1"]'.</msg>
+<msg time="2025-01-26T08:35:42.478410" level="INFO">xpath criteria: //android.widget.Button[@resource-id="android:id/button1"]</msg>
+<arg>${oke_button}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:42.139206" elapsed="0.340214"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:42.138207" elapsed="0.341213"/>
+</kw>
+<kw name="Click End Date Input" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:43.151151" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.example.myapplication:id/textEndDate"]</msg>
+<arg>${endDate_input}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:42.480940" elapsed="0.671416"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:43.155878" level="INFO">Clicking element '//android.widget.TextView[@resource-id="com.example.myapplication:id/textEndDate"]'.</msg>
+<msg time="2025-01-26T08:35:43.358191" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.example.myapplication:id/textEndDate"]</msg>
+<arg>${endDate_input}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:43.152356" elapsed="0.205835"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:42.479420" elapsed="0.880146"/>
+</kw>
+<kw name="Choose End Date" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:44.368000" level="INFO">xpath criteria: //android.view.View[@content-desc="03 August 2019"]</msg>
+<arg>${end_date}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:43.359566" elapsed="1.008434"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:44.376518" level="INFO">Clicking element '//android.view.View[@content-desc="03 August 2019"]'.</msg>
+<msg time="2025-01-26T08:35:45.404939" level="INFO">xpath criteria: //android.view.View[@content-desc="03 August 2019"]</msg>
+<arg>${end_date}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:44.368000" elapsed="1.038270"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:43.359566" elapsed="2.046704"/>
+</kw>
+<kw name="Click Accept End Date" owner="bookPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:45.415015" level="INFO">Clicking element '//android.widget.Button[@resource-id="android:id/button1"]'.</msg>
+<msg time="2025-01-26T08:35:45.789658" level="INFO">xpath criteria: //android.widget.Button[@resource-id="android:id/button1"]</msg>
+<arg>${oke_button}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:45.407536" elapsed="0.382122"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:45.406270" elapsed="0.384895"/>
+</kw>
+<kw name="Click Flight Type" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:46.429621" level="INFO">xpath criteria: //android.widget.RadioButton[@resource-id="com.example.myapplication:id/radioButtonFlightHotel"]</msg>
+<arg>${flightAndHotel_radiobutton}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:45.792188" elapsed="0.637433"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:46.437774" level="INFO">Clicking element '//android.widget.RadioButton[@resource-id="com.example.myapplication:id/radioButtonFlightHotel"]'.</msg>
+<msg time="2025-01-26T08:35:46.741240" level="INFO">xpath criteria: //android.widget.RadioButton[@resource-id="com.example.myapplication:id/radioButtonFlightHotel"]</msg>
+<arg>${flightAndHotel_radiobutton}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:46.429621" elapsed="0.311619"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:45.791165" elapsed="0.950075"/>
+</kw>
+<kw name="Click Checkbox" owner="bookPage">
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:46.746584" level="INFO">Clicking element '//android.widget.CheckBox[@resource-id="com.example.myapplication:id/checkBoxDay"]'.</msg>
+<msg time="2025-01-26T08:35:47.487212" level="INFO">xpath criteria: //android.widget.CheckBox[@resource-id="com.example.myapplication:id/checkBoxDay"]</msg>
+<arg>${oneDay_checkbox}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:46.742317" elapsed="0.744895"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:46.741240" elapsed="0.745972"/>
+</kw>
+<kw name="Click Booking Button" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:48.114620" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/book_flight"]</msg>
+<arg>${book_button}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:47.488259" elapsed="0.626361"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:48.121126" level="INFO">Clicking element '//android.widget.Button[@resource-id="com.example.myapplication:id/book_flight"]'.</msg>
+<msg time="2025-01-26T08:35:48.302076" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/book_flight"]</msg>
+<arg>${book_button}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:48.115958" elapsed="0.186118"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:47.488259" elapsed="0.813817"/>
+</kw>
+<kw name="Verify Confirm Booking Page" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:49.990267" level="INFO">xpath criteria: //android.widget.TextView[@resource-id="com.example.myapplication:id/textView6"]
+xpath criteria: //android.widget.TextView[@resource-id="com.example.myapplication:id/textView6"]</msg>
+<arg>${title_confirm_book}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:48.303510" elapsed="1.686757"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:48.302995" elapsed="1.687272"/>
+</kw>
+<kw name="Choose Price Booking" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:50.151651" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/price5"]</msg>
+<arg>${price_booking}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:49.991272" elapsed="0.160379"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:50.157864" level="INFO">Clicking element '//android.widget.Button[@resource-id="com.example.myapplication:id/price5"]'.</msg>
+<msg time="2025-01-26T08:35:50.459528" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/price5"]</msg>
+<arg>${price_booking}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:50.152763" elapsed="0.306765"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:49.990267" elapsed="0.469261"/>
+</kw>
+<kw name="Click Confirm" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:51.174575" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/confirm_order"]</msg>
+<arg>${confirm_button}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:50.462075" elapsed="0.712500"/>
+</kw>
+<kw name="Click Element" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:51.182544" level="INFO">Clicking element '//android.widget.Button[@resource-id="com.example.myapplication:id/confirm_order"]'.</msg>
+<msg time="2025-01-26T08:35:51.381751" level="INFO">xpath criteria: //android.widget.Button[@resource-id="com.example.myapplication:id/confirm_order"]</msg>
+<arg>${confirm_button}</arg>
+<doc>Click element identified by `locator`.</doc>
+<status status="PASS" start="2025-01-26T08:35:51.175928" elapsed="0.205823"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:50.461038" elapsed="0.920713"/>
+</kw>
+<kw name="Verify Booking Success" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:52.944291" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="com.example.myapplication:id/checkedTextView"]
+xpath criteria: //android.widget.CheckedTextView[@resource-id="com.example.myapplication:id/checkedTextView"]</msg>
+<arg>${book_success}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:51.383000" elapsed="1.561291"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:51.381751" elapsed="1.563930"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:28.178253" elapsed="24.767428"/>
+</kw>
+<arg>Open Flight Application</arg>
+<arg>AND Login With Valid Credentials</arg>
+<arg>AND Navigate To Book Page</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2025-01-26T08:35:01.014531" elapsed="51.931150"/>
+</kw>
+<kw name="Verify Booking Success" owner="bookPage">
+<kw name="Wait Until Element Is Visible" owner="AppiumLibrary">
+<msg time="2025-01-26T08:35:53.067428" level="INFO">xpath criteria: //android.widget.CheckedTextView[@resource-id="com.example.myapplication:id/checkedTextView"]</msg>
+<arg>${book_success}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<status status="PASS" start="2025-01-26T08:35:52.946804" elapsed="0.120624"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:52.946804" elapsed="0.120624"/>
+</kw>
+<kw name="Close Flight Application" owner="base" type="TEARDOWN">
+<kw name="Close Application" owner="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<status status="PASS" start="2025-01-26T08:35:53.068557" elapsed="1.324760"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:53.068557" elapsed="1.324760"/>
+</kw>
+<status status="PASS" start="2025-01-26T08:35:01.010876" elapsed="53.383555"/>
 </test>
-<status status="FAIL" start="2025-01-26T08:19:48.828452" elapsed="0.169552"/>
+<status status="PASS" start="2025-01-26T08:35:00.496476" elapsed="53.898958"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="bookSuite" id="s1" pass="0" fail="1" skip="0">bookSuite</stat>
+<stat name="bookSuite" id="s1" pass="1" fail="0" skip="0">bookSuite</stat>
 </suite>
 </statistics>
 <errors>

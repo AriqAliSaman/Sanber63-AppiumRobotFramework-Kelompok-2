@@ -76,6 +76,9 @@ Click Confirm
     Wait Until Element Is Visible      ${confirm_button}
     Click Element                      ${confirm_button}
 
+Verify Booking Success
+    Wait Until Element Is Visible      ${book_success}
+
 
 Navigate To Book Page
     Click Book Button On Home Page
@@ -97,3 +100,4 @@ Navigate To Book Page
     Verify Confirm Booking Page
     Choose Price Booking
     Click Confirm
+    Verify Booking Success
