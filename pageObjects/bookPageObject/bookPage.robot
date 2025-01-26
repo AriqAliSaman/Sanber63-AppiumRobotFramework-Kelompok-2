@@ -12,7 +12,7 @@ Click From City Dropdown
     Wait Until Element Is Visible      ${fromCity_dropdown}
     Click Element                      ${fromCity_dropdown}
 
-Click From City Option
+Choose From City Option
     Wait Until Element Is Visible      ${toronto_option}
     Click Element                      ${toronto_option}
 
@@ -20,7 +20,7 @@ Click To City Dropdown
     Wait Until Element Is Visible      ${toCity_dropdown}
     Click Element                      ${toCity_dropdown}
 
-Click To City Option
+Choose To City Option
     Wait Until Element Is Visible      ${ottawa_option}
     Click Element                      ${ottawa_option}
 
@@ -28,7 +28,7 @@ Click Class Dropdown
     Wait Until Element Is Visible      ${class_dropdown}
     Click Element                      ${class_dropdown}
 
-Click Class Option
+Choose Class Option
     Wait Until Element Is Visible      ${business_option}
     Click Element                      ${business_option}
 
@@ -36,24 +36,22 @@ Click Start Date Input
     Wait Until Element Is Visible      ${startDate_input}
     Click Element                      ${startDate_input}
 
-Click Start Date 
+Choose Start Date 
     Wait Until Element Is Visible      ${start_date}
     Click Element                      ${start_date}
 
-Click Ok
-    Wait Until Element Is Visible      ${oke_button}
+Click Accept Start Date
     Click Element                      ${oke_button}
 
 Click End Date Input
     Wait Until Element Is Visible      ${endDate_input}
     Click Element                      ${endDate_input}
 
-Click End Date 
+Choose End Date 
     Wait Until Element Is Visible      ${end_date}
     Click Element                      ${end_date}
 
-Click Ok
-    Wait Until Element Is Visible      ${oke_button}
+Click Accept End Date
     Click Element                      ${oke_button}
 
 Click Flight Type
@@ -64,21 +62,38 @@ Click Checkbox
     Click Element                      ${oneDay_checkbox}
 
 Click Booking Button
-    Click Element                      ${bookPage_button}
+    Wait Until Element Is Visible      ${book_button}
+    Click Element                      ${book_button}
+
+Verify Confirm Booking Page 
+    Wait Until Element Is Visible      ${title_confirm_book}
+
+Choose Price Booking
+    Wait Until Element Is Visible      ${price_booking}
+    Click Element                      ${price_booking}
+
+Click Confirm
+    Wait Until Element Is Visible      ${confirm_button}
+    Click Element                      ${confirm_button}
 
 
 Navigate To Book Page
     Click Book Button On Home Page
     Click From City Dropdown
-    Click From City Option
+    Choose From City Option
     Click To City Dropdown
-    Click To City Option
+    Choose To City Option
     Click Class Dropdown
-    Click Class Option
+    Choose Class Option
     Click Start Date Input
-    Click Start Date 
+    Choose Start Date 
+    Click Accept Start Date
     Click End Date Input
-    Click End Date
+    Choose End Date
+    Click Accept End Date
     Click Flight Type
     Click Checkbox
     Click Booking Button
+    Verify Confirm Booking Page
+    Choose Price Booking
+    Click Confirm
